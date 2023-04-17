@@ -29,6 +29,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "flask-login"
+version = "0.5.0"
+summary = "User session management for Flask"
+dependencies = [
+    "Flask",
+]
+
+[[package]]
 name = "flask-sqlalchemy"
 version = "3.0.3"
 requires_python = ">=3.7"
@@ -93,7 +101,7 @@ dependencies = [
 [metadata]
 lock_version = "4.2"
 groups = ["default"]
-content_hash = "sha256:461e2f71b02abe7f75493e656152498e7e88a1bf45df6f480bafd2b737b73b7c"
+content_hash = "sha256:8d2215f03b9567772def900911f4b788b02120ffa46ca8a6330a33656ba53313"
 
 [metadata.files]
 "click 8.1.3" = [
@@ -107,6 +115,10 @@ content_hash = "sha256:461e2f71b02abe7f75493e656152498e7e88a1bf45df6f480bafd2b73
 "flask 2.2.3" = [
     {url = "https://files.pythonhosted.org/packages/95/9c/a3542594ce4973786236a1b7b702b8ca81dbf40ea270f0f96284f0c27348/Flask-2.2.3-py3-none-any.whl", hash = "sha256:c0bec9477df1cb867e5a67c9e1ab758de9cb4a3e52dd70681f59fa40a62b3f2d"},
     {url = "https://files.pythonhosted.org/packages/e8/5c/ff9047989bd995b1098d14b03013f160225db2282925b517bb4a967752ee/Flask-2.2.3.tar.gz", hash = "sha256:7eb373984bf1c770023fce9db164ed0c3353cd0b53f130f4693da0ca756a2e6d"},
+]
+"flask-login 0.5.0" = [
+    {url = "https://files.pythonhosted.org/packages/2b/83/ac5bf3279f969704fc1e63f050c50e10985e50fd340e6069ec7e09df5442/Flask_Login-0.5.0-py2.py3-none-any.whl", hash = "sha256:7451b5001e17837ba58945aead261ba425fdf7b4f0448777e597ddab39f4fba0"},
+    {url = "https://files.pythonhosted.org/packages/f9/01/f6c0a3a654ca125cf9cd273314c03a8bc6a47bf861765c8c1d375e15a28d/Flask-Login-0.5.0.tar.gz", hash = "sha256:6d33aef15b5bcead780acc339464aae8a6e28f13c90d8b1cf9de8b549d1c0b4b"},
 ]
 "flask-sqlalchemy 3.0.3" = [
     {url = "https://files.pythonhosted.org/packages/7a/33/b0418aaeb6b122fccfdea1bf3c06843225ba29159b65c0acf9bd4285ee01/Flask-SQLAlchemy-3.0.3.tar.gz", hash = "sha256:2764335f3c9d7ebdc9ed6044afaf98aae9fa50d7a074cef55dde307ec95903ec"},
