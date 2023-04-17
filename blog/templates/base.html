@@ -37,9 +37,9 @@ aria-expanded="false" aria-label="Toggle navigation">
         </div>
         <div class="navbar-nav ms-auto">
             {% if current_user.is_authenticated %}
-                <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                <a class="nav-link" href="{{ url_for('auth_app.logout') }}">Logout</a>
             {% else %}
-                <a href="{{ url_for('login') }}"
+                <a href="{{ url_for('auth_app.login') }}"
                     class="nav-link {% if request.endpoint == 'login' -%}active{%- endif %}">Login
                 </a>
             {% endif %}
