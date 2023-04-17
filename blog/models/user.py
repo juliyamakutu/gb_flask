@@ -1,4 +1,5 @@
-from sclalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, Boolean
+from blog.models.database import db
 
 
 class User(db.Model):

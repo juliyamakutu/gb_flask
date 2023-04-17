@@ -12,6 +12,9 @@
                 <li>
                     <a href="{{ url_for('users_app.details', user_id=user_id) }}"> {{ users[user_id] }}
                     </a>
+                    {% if user.is_staff %}
+                        <span class="badge bg-secondary">staff</span>
+                    {% endif %}
                 </li>
             {% endfor %}
         </ul>
