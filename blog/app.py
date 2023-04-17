@@ -1,6 +1,8 @@
-from datetime import time
+from datetime import datetime
 from werkzeug.exceptions import BadRequest
-from flask import Flask, request, g
+from flask import Flask, request, g, render_template
+from blog.views.users import users_app
+from blog.views.articles import articles_app
 
 
 app = Flask(__name__)
@@ -8,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello web!"
+    return render_template("index.html")
 
 
 @app.route("/greet/<name>/")
@@ -48,7 +50,7 @@ def process_before_request():
     """
     Sets start_time to `g` object
     """
-    g.start_time = time()
+    g.start_time = datetime.now()
 
 
 @app.after_request
@@ -58,7 +60,7 @@ def process_after_request(response):
     adds process time in header
     """
     if hasattr(g, "start_time"):
-        response.headers["process-time"] = time() - g.start_time
+        response.headers["process-time"] = datetime.now() - g.start_time
 
     return response
 
@@ -88,5 +90,9 @@ def handle_zero_division_error(error):
     print(error)  # prints str version of error: 'division by zero'
     app.logger.exception("Here's traceback for zero division error")
     return "Never divide by zero!", 400
+
+
+app.register_blueprint(users_app, url_prefix="/users")
+app.register_blueprint(articles_app, url_prefix="/articles")
 
 
