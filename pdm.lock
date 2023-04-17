@@ -101,7 +101,7 @@ dependencies = [
 [metadata]
 lock_version = "4.2"
 groups = ["default"]
-content_hash = "sha256:8d2215f03b9567772def900911f4b788b02120ffa46ca8a6330a33656ba53313"
+content_hash = "sha256:e0349f8829d27d562649c5c2866b4cdab4e8c76e4bad3e51de13edc3a2325880"
 
 [metadata.files]
 "click 8.1.3" = [
