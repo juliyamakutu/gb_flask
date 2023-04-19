@@ -5,6 +5,7 @@ from blog.views.users import users_app
 from blog.views.articles import articles_app
 from blog.models.database import db
 from blog.views.auth import auth_app, login_manager
+import os
 
 
 app = Flask(__name__)
@@ -131,5 +132,8 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["SECRET_KEY"] = "abcdefg123456"
 
 login_manager.init_app(app)
+
+cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
+app.config.from_object(f"blog.config.{cfg_name}")
 
 db.init_app(app)
