@@ -278,3 +278,6 @@ fabric.properties
 # Built Visual Studio Code Extensions
 *.vsix
 .pdm-python
+
+# Custom
+pgdata_dev/

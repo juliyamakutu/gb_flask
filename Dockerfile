@@ -4,13 +4,18 @@ WORKDIR /app
 
 COPY pyproject.toml .
 COPY pdm.lock .
-RUN pip install --no-cache-dir pdm && pdm export -f requirements -o requirements.txt \
-    && pip install --no-cache-dir -r requirements.txt && rm requirements.txt
+RUN pip install --no-cache-dir pdm && pdm export -f requirements -o requirements.txt
+RUN echo psycopg2 >> requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 COPY wsgi.py wsgi.py
 COPY blog ./blog
+COPY migrations ./migrations
+COPY entrypoint.sh entrypoint.sh
 
-EXPOSE 5000
+RUN chmod u+x ./entrypoint.sh
 
-CMD ["python", "wsgi.py"]
+EXPOSE 8080
+
+CMD ["./entrypoint.sh"]
 
