@@ -36,13 +36,16 @@ aria-expanded="false" aria-label="Toggle navigation">
             </div>
         </div>
         <div class="navbar-nav ms-auto">
-            {% if current_user.is_authenticated %}
-                <a class="nav-link" href="{{ url_for('auth_app.logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ url_for('auth_app.login') }}"
-                    class="nav-link {% if request.endpoint == 'login' -%}active{%- endif %}">Login
+        {% if current_user.is_authenticated %}
+            <a class="nav-link" href="{{ url_for('auth_app.logout') }}">Logout</a>
+        {% else %}
+            {% for (endpoint, label) in [('auth_app.login', 'Login'), ('auth_app.register', 'Register')] %}
+                <a href="{{ url_for(endpoint) }}"
+                    class="nav-link {% if request.endpoint == endpoint -%}active{%- endif %}">
+                    {{ label }}
                 </a>
-            {% endif %}
+            {% endfor %}
+        {% endif %}
         </div>
     </div>
 </nav>

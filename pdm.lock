@@ -91,6 +91,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "flask-wtf"
+version = "1.1.1"
+requires_python = ">=3.7"
+summary = "Form rendering, validation, and CSRF protection for Flask with WTForms."
+dependencies = [
+    "Flask",
+    "WTForms",
+    "itsdangerous",
+]
+
+[[package]]
 name = "idna"
 version = "3.4"
 requires_python = ">=3.5"
@@ -162,7 +173,7 @@ dependencies = [
 [metadata]
 lock_version = "4.2"
 groups = ["default"]
-content_hash = "sha256:edc651b2f8d6cabfaa9bbce9a303a888cb021a71429ca81260df03255520a0da"
+content_hash = "sha256:4ac73e7d0a40e50d12e39ee70ca84682bfbb9e44ca6853d47a8aa8ae23346b74"
 
 [metadata.files]
 "alembic 1.10.3" = [
@@ -223,6 +234,10 @@ content_hash = "sha256:edc651b2f8d6cabfaa9bbce9a303a888cb021a71429ca81260df03255
 "flask-sqlalchemy 2.5.1" = [
     {url = "https://files.pythonhosted.org/packages/26/2c/9088b6bd95bca539230bbe9ad446737ed391aab9a83aff403e18dded3e75/Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl", hash = "sha256:f12c3d4cc5cc7fdcc148b9527ea05671718c3ea45d50c7e732cceb33f574b390"},
     {url = "https://files.pythonhosted.org/packages/35/f0/39dd2d8e7e5223f78a5206d7020dc0e16718a964acfb3564d89e9798ab9b/Flask-SQLAlchemy-2.5.1.tar.gz", hash = "sha256:2bda44b43e7cacb15d4e05ff3cc1f8bc97936cc464623424102bfc2c35e95912"},
+]
+"flask-wtf 1.1.1" = [
+    {url = "https://files.pythonhosted.org/packages/80/55/5114035eb8f6200fbe838a4b9828409ac831408c4591bf7875aed299d5f8/Flask-WTF-1.1.1.tar.gz", hash = "sha256:41c4244e9ae626d63bed42ae4785b90667b885b1535d5a4095e1f63060d12aa9"},
+    {url = "https://files.pythonhosted.org/packages/e0/06/102cdb72b0f98bf6ee73e9239e9cfb071e5ab8893037f6b12053b6b06a27/Flask_WTF-1.1.1-py3-none-any.whl", hash = "sha256:7887d6f1ebb3e17bf648647422f0944c9a469d0fcf63e3b66fb9a83037e38b2c"},
 ]
 "idna 3.4" = [
     {url = "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz", hash = "sha256:814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"},
