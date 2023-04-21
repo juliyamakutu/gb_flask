@@ -6,6 +6,7 @@ from blog.views.users import users_app
 from blog.views.articles import articles_app
 from blog.models.database import db
 from blog.views.auth import auth_app, login_manager
+from blog.security import flask_bcrypt
 import os
 
 
@@ -95,32 +96,39 @@ def handle_zero_division_error(error):
     return "Never divide by zero!", 400
 
 
-@app.cli.command("init-db")
-def init_db():
-    """
-    Run in your terminal:
-        flask init-db
-    """
-    db.create_all()
-    print("done!")
+# @app.cli.command("init-db")
+# def init_db():
+    # """
+    # Run in your terminal:
+        # flask init-db
+    # """
+    # db.create_all()
+    # print("done!")
 
 
-@app.cli.command("create-users")
-def create_users():
+# @app.cli.command("create-users")
+# def create_users():
+@app.cli.command("create-admin")
+def create_admin():
     """
     Run in your terminal:
-        flask create-users
-        > done! created users: <User #1 'admin'> <User #2 'james'>
+        #flask create-users
+        ➜ flask create-admin
+        #> done! created users: <User #1 'admin'> <User #2 'james'>
+        > created admin: <User #1 'admin'>
     """
     from blog.models.user import User
+
     admin = User(username="admin", is_staff=True)
-    james = User(username="james")
+    admin.password = os.environ.get("ADMIN_PASSWORD") or "adminpass"
+    # james = User(username="james")
 
     db.session.add(admin)
-    db.session.add(james)
+    #db.session.add(james)
     db.session.commit()
 
-    print("done! created users:", admin, james)
+    print("created admin:", admin)
+    # print("done! created users:", admin, james)
 
 
 app.register_blueprint(users_app, url_prefix="/users")
@@ -134,8 +142,10 @@ app.config["SECRET_KEY"] = "abcdefg123456"
 
 login_manager.init_app(app)
 
-cfg_name = os.environ.get("CONFIG_NAME") or "ProductionConfig"
+cfg_name = os.environ.get("CONFIG_NAME") or "DevConfig"
 app.config.from_object(f"blog.config.{cfg_name}")
+
+flask_bcrypt.init_app(app)
 
 db.init_app(app)
 migrate = Migrate(app, db)
