@@ -5,7 +5,6 @@ WORKDIR /app
 COPY pyproject.toml .
 COPY pdm.lock .
 RUN pip install --no-cache-dir pdm && pdm export -f requirements -o requirements.txt
-RUN echo psycopg2 >> requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt && rm requirements.txt
 
 COPY wsgi.py wsgi.py
