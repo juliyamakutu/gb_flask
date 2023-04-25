@@ -15,4 +15,17 @@
             {% endfor %}
         </ul>
     </div>
+    <div>
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <a href="{{ url_for('articles_app.details', article_id=article.id) }}">{{ article.title }}</a>
+                    by {{ article.author.user.username }}
+                </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        <a href="{{ url_for('articles_app.create') }}">Create new</a>
+    </div>
 {% endblock %}
+
