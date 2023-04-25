@@ -17,11 +17,11 @@ ARTICLES = ["Flask", "Django", "JSON:API"]
 @articles_app.route("/", endpoint="list")
 def articles_list():
     articles = Article.query.all()
-    return render_template("articles/list.html", articles=ARTICLES)
+    return render_template("articles/list.html", articles=articles)
 
 
 @articles_app.route("/<int:article_id>/", endpoint="details")
-def article_detals(article_id):
+def article_details(article_id):
     article = Article.query.filter_by(id=article_id).one_or_none()
     if article is None:
         raise NotFound
