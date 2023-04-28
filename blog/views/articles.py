@@ -26,9 +26,8 @@ def joinedload(tags):
 
 @articles_app.route("/<int:article_id>/", endpoint="details")
 def article_details(article_id):
-    article = Article.query.filter_by(id=article_id).options(
-        joinedload(Article.tags)  # подгружаем связанные теги!
-    ).one_or_none()
+    # article = Article.query.filter_by(id=article_id).options(joinedload(Article.tags)).one_or_none()
+    article = Article.query.filter_by(id=article_id).one_or_none()
     if article is None:
         raise NotFound
     return render_template("articles/details.html", article=article)
