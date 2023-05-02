@@ -62,6 +62,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "flask-admin"
+version = "1.6.1"
+requires_python = ">=3.6"
+summary = "Simple and extensible admin interface framework for Flask"
+dependencies = [
+    "Flask>=0.7",
+    "wtforms",
+]
+
+[[package]]
 name = "flask-login"
 version = "0.5.0"
 summary = "User session management for Flask"
@@ -173,7 +183,7 @@ dependencies = [
 [metadata]
 lock_version = "4.2"
 groups = ["default"]
-content_hash = "sha256:4ac73e7d0a40e50d12e39ee70ca84682bfbb9e44ca6853d47a8aa8ae23346b74"
+content_hash = "sha256:2278e2e97651c5062fb9d7cf00a88aa8a1f73dac86e1a777f1c8c6d1f40d127b"
 
 [metadata.files]
 "alembic 1.10.3" = [
@@ -222,6 +232,10 @@ content_hash = "sha256:4ac73e7d0a40e50d12e39ee70ca84682bfbb9e44ca6853d47a8aa8ae2
 "flask 1.1.4" = [
     {url = "https://files.pythonhosted.org/packages/4d/5b/2d145f5fe718b2f15ebe69240538f06faa8bbb76488bf962091db1f7a26d/Flask-1.1.4.tar.gz", hash = "sha256:0fbeb6180d383a9186d0d6ed954e0042ad9f18e0e8de088b2b419d526927d196"},
     {url = "https://files.pythonhosted.org/packages/e8/6d/994208daa354f68fd89a34a8bafbeaab26fda84e7af1e35bdaed02b667e6/Flask-1.1.4-py2.py3-none-any.whl", hash = "sha256:c34f04500f2cbbea882b1acb02002ad6fe6b7ffa64a6164577995657f50aed22"},
+]
+"flask-admin 1.6.1" = [
+    {url = "https://files.pythonhosted.org/packages/61/b3/656c78dfef163517dbbc9fd106f0604e37b436ad51f9d9450b60e9407e35/Flask_Admin-1.6.1-py3-none-any.whl", hash = "sha256:fd8190f1ec3355913a22739c46ed3623f1d82b8112cde324c60a6fc9b21c9406"},
+    {url = "https://files.pythonhosted.org/packages/be/4d/7cad383a93e3e1dd9378f1fcf05ddc532c6d921fb30c19ce8f8583630f24/Flask-Admin-1.6.1.tar.gz", hash = "sha256:24cae2af832b6a611a01d7dc35f42d266c1d6c75a426b869d8cb241b78233369"},
 ]
 "flask-login 0.5.0" = [
     {url = "https://files.pythonhosted.org/packages/2b/83/ac5bf3279f969704fc1e63f050c50e10985e50fd340e6069ec7e09df5442/Flask_Login-0.5.0-py2.py3-none-any.whl", hash = "sha256:7451b5001e17837ba58945aead261ba425fdf7b4f0448777e597ddab39f4fba0"},
