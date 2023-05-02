@@ -29,7 +29,6 @@ class TagAdminView(CustomView):
     edit_modal = True
 
 
-
 # Create admin with custom base template
 admin = Admin(name="Blog Admin", template_mode="bootstrap4")
 
@@ -42,6 +41,7 @@ admin.add_view(CustomView(models.Article, db.session, category="Models"))
 
 admin.add_view(TagAdminView(models.Tag, db.session, category="Models"))
 
+
 class UserAdminView(CustomView):
     column_exclude_list = ("_password",)
     column_searchable_list = ("first_name", "last_name", "username", "is_staff", "email")
@@ -50,6 +50,7 @@ class UserAdminView(CustomView):
     can_create = True
     can_edit = True
     can_delete = False
+
 
 admin.add_view(UserAdminView(models.User, db.session, category="Models"))
 
@@ -61,6 +62,7 @@ class MyAdminIndexView(AdminIndexView):
         if not (current_user.is_authenticated and current_user.is_staff):
             return redirect(url_for("auth_app.login"))
         return super(MyAdminIndexView, self).index()
+
 
 # Create admin with custom props
 admin = Admin(
