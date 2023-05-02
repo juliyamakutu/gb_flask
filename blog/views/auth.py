@@ -42,7 +42,7 @@ def register():
         user = User(
             first_name=form.first_name.data,
             last_name=form.last_name.data,
-            Username=form.username.data,
+            username=form.username.data,
             email=form.email.data,
             is_staff=False,
         )
