@@ -21,4 +21,13 @@ class Article(db.Model):
         back_populates="articles",
     )
 
+    def __str__(self):
+        return self.title
+
+
+
+
+
+
+
 
