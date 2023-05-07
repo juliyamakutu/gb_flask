@@ -19,7 +19,6 @@ def create_api_spec_plugin(app):
             "Article": "Article API",
         }
     )
-
     return api_spec_plugin
 
 
@@ -40,3 +39,4 @@ def init_api(app):
     api.route(AuthorDetail, "author_detail", "/api/authors/<int:id>/", tag="Author")
 
     return api
+
