@@ -22,6 +22,10 @@ dependencies = [
     "email-validator>=2.0.0.post2",
     "flask-wtf>=1.1.1",
     "Flask-Admin>=1.6.1",
+    "Flask-COMBO-JSONAPI==1.0.5",
+    "ComboJSONAPI==1.0.5",
+    "apispec==2.0.2",
+    "PyYAML==5.3.1",
 ]
 requires-python = "~=3.9"
 license = {text = "MIT"}
