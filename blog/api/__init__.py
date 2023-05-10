@@ -3,6 +3,7 @@ from combojsonapi.spec import ApiSpecPlugin
 from blog.api.user import UserList, UserDetail
 from blog.api.author import AuthorList, AuthorDetail
 from blog.api.article import ArticleList, ArticleDetail
+from combojsonapi.event import EventPlugin
 
 from blog.api.tag import TagList, TagDetail
 
@@ -23,10 +24,12 @@ def create_api_spec_plugin(app):
 
 
 def init_api(app):
+    event_plugin = EventPlugin()
     api_spec_plugin = create_api_spec_plugin(app)
     api = Api(
         app,
         plugins=[
+            event_plugin,
             api_spec_plugin,
         ],
     )
