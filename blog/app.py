@@ -9,6 +9,7 @@ from blog.views.auth import auth_app, login_manager
 from blog.security import flask_bcrypt
 from blog.views.authors import authors_app
 from blog.admin import admin
+from blog.api import init_api
 import os
 
 
@@ -173,6 +174,8 @@ flask_bcrypt.init_app(app)
 
 db.init_app(app)
 migrate = Migrate(app, db)
+
+api = init_api(app)
 
 admin.init_app(app)
 
